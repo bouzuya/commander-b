@@ -1,0 +1,37 @@
+{
+  "name": "commander-b",
+  "version": "0.0.0",
+  "description": "A helper library for Node.js command-line interfaces, inspired by commander.js.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R spec",
+    "coveralls": "istanbul cover _mocha --report lcovonly && cat ./coverage/lcov.info | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bouzuya/commander-b.git"
+  },
+  "keywords": [
+    "cli",
+    "command",
+    "commander"
+  ],
+  "author": {
+    "name": "bouzuya",
+    "email": "bouzuya@gmail.com",
+    "url": "http://bouzuya.net/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bouzuya/commander-b/issues"
+  },
+  "homepage": "https://github.com/bouzuya/commander-b",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "1.9.1",
+    "mocha": "1.18.2",
+    "q": "1.0.1",
+    "istanbul": "^0.2.9",
+    "coveralls": "^2.10.0"
+  }
+}
