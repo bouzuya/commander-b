@@ -2,7 +2,7 @@ commander-b
 ==============================================================================
 
 [![Build Status](https://travis-ci.org/bouzuya/commander-b.svg)](https://travis-ci.org/bouzuya/commander-b)
-[![Coverage Status](https://img.shields.io/coveralls/bouzuya/commander-b.svg)](https://coveralls.io/r/bouzuya/commander-b)
+[![Coverage Status](https://img.shields.io/coveralls/bouzuya/commander-b.svg)](https://coveralls.io/r/bouzuya/commander-b?branch=master)
 
 > Fine, we'll go to plan B... You got a plan B?
 > Marcus Fenix
