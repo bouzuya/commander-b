@@ -1,6 +1,6 @@
 {
   "name": "commander-b",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A helper library for Node.js command-line interfaces, inspired by commander.js.",
   "main": "index.js",
   "scripts": {
