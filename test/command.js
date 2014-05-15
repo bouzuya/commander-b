@@ -377,7 +377,7 @@ describe('Command', function() {
         it('throws error', function() {
           expect(function() {
             this.f([this.option], ['--string']);
-          }).throw(Error);
+          }.bind(this)).throw('string required');
         });
       });
 
@@ -392,7 +392,7 @@ describe('Command', function() {
         it('throws error', function() {
           expect(function() {
             this.f([this.option], ['-s']);
-          }).throw(Error);
+          }.bind(this)).throw('string required');
         });
       });
     });
