@@ -13,7 +13,7 @@ Installation
 
     npm install bouzuya/commander-b
 
-Examples
+Usage
 ------------------------------------------------------------------------------
 
 ### examples/simple.js
@@ -46,6 +46,9 @@ License
 ------------------------------------------------------------------------------
 
 MIT
+
+Badges
+------------------------------------------------------------------------------
 
 [![Build Status](https://travis-ci.org/bouzuya/commander-b.svg)](https://travis-ci.org/bouzuya/commander-b)
 [![Coverage Status](https://coveralls.io/repos/bouzuya/commander-b/badge.png?branch=master)](https://coveralls.io/r/bouzuya/commander-b?branch=master)
