@@ -8,9 +8,6 @@ A helper library for Node.js command-line interfaces, inspired by [commander.js]
 
 [visionmedia/commander.js]: https://github.com/visionmedia/commander.js
 
-[![Build Status](https://travis-ci.org/bouzuya/commander-b.svg)](https://travis-ci.org/bouzuya/commander-b)
-[![Coverage Status](https://coveralls.io/repos/bouzuya/commander-b/badge.png?branch=master)](https://coveralls.io/r/bouzuya/commander-b?branch=master)
-
 Installation
 ------------------------------------------------------------------------------
 
@@ -19,7 +16,7 @@ Installation
 Examples
 ------------------------------------------------------------------------------
 
-## examples/simple.js
+### examples/simple.js
 
     var command = require('commander-b');
     
@@ -28,7 +25,7 @@ Examples
     .action(function() { console.log('Yukiho is God.'); })
     .execute();
 
-## Run
+### Run
 
     $ node examples/simple.js
     Yukiho is God.
@@ -49,4 +46,7 @@ License
 ------------------------------------------------------------------------------
 
 MIT
+
+[![Build Status](https://travis-ci.org/bouzuya/commander-b.svg)](https://travis-ci.org/bouzuya/commander-b)
+[![Coverage Status](https://coveralls.io/repos/bouzuya/commander-b/badge.png?branch=master)](https://coveralls.io/r/bouzuya/commander-b?branch=master)
 
