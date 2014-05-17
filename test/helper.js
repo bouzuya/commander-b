@@ -1,9 +1,11 @@
 var Promise = require('q').Promise;
 var childProcess = require('child_process');
+var sinon = require('sinon');
 
-global.expect = require('chai').expect;
+global.expect = require('chai').use(require('sinon-chai')).expect;
 
 beforeEach(function() {
+  this.sinon = sinon.sandbox.create();
   this.exec = function(command) {
     return new Promise(function(resolve, reject) {
       var result = {};
@@ -16,5 +18,9 @@ beforeEach(function() {
       child.once('exit', function(code) { result.exitCode = code; });
     });
   };
+});
+
+afterEach(function() {
+  this.sinon.restore();
 });
 
