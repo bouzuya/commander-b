@@ -74,7 +74,7 @@ describe('Examples', function() {
           'stdout',
           [
             '',
-            '  Usage: options',
+            '  Usage: options <action>',
             '',
             '  Options: ',
             '',
@@ -385,7 +385,7 @@ describe('Examples', function() {
           'stdout',
           [
             'parent action : abc',
-            '{ \'parent-option\': true }'
+            '{ parentOption: true }'
           ].join('\n') + '\n'
         );
         expect(result).to.have.property('stderr', '');
@@ -436,7 +436,7 @@ describe('Examples', function() {
           'stdout',
           [
             'child action',
-            '{ \'child-option\': true }'
+            '{ childOption: true }'
           ].join('\n') + '\n'
         );
         expect(result).to.have.property('stderr', '');

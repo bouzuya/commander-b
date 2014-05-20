@@ -1,56 +1,213 @@
 var option = require('../lib/option');
 
 describe('Option', function() {
-  describe('constructor', function() {
-    context('-i, --integer <n>, An integer argument', function() {
-      it('works', function() {
-        var o = option('-i, --integer <n>', 'An integer argument');
-        expect(o).to.have.property('_short', 'i');
-        expect(o).to.have.property('_long', 'integer');
-        expect(o).to.have.deep.property('_args.required', true);
-        expect(o).to.have.property('_description', 'An integer argument');
+  context('-i, --integer <n>, An integer argument', function() {
+    before(function() {
+      this.o = option('-i, --integer <n>', 'An integer argument');
+    });
+
+    describe('short()', function() {
+      it('returns \'i\'', function() {
+        expect(this.o.short()).to.equal('i');
       });
     });
 
-    context('--integer <n>, An integer argument', function() {
-      it('works', function() {
-        var o = option('--integer <n>', 'An integer argument');
-        expect(o).to.have.property('_short', null);
-        expect(o).to.have.property('_long', 'integer');
-        expect(o).to.have.deep.property('_args.required', true);
-        expect(o).to.have.property('_description', 'An integer argument');
+    describe('long()', function() {
+      it('returns \'integer\'', function() {
+        expect(this.o.long()).to.equal('integer');
       });
     });
 
-    context('--integer [n], An integer argument', function() {
-      it('works', function() {
-        var o = option('--integer [n]', 'An integer argument');
-        expect(o).to.have.property('_short', null);
-        expect(o).to.have.property('_long', 'integer');
-        expect(o).to.have.deep.property('_args.required', false);
-        expect(o).to.have.property('_description', 'An integer argument');
+    describe('key()', function() {
+      it('returns \'integer\'', function() {
+        expect(this.o.key()).to.equal('integer');
       });
     });
 
-    context('--boolean, A boolean argument', function() {
-      it('works', function() {
-        var o = option('--boolean', 'A boolean argument');
-        expect(o).to.have.property('_short', null);
-        expect(o).to.have.property('_long', 'boolean');
-        expect(o).to.have.property('_args', null);
-        expect(o).to.have.property('_description', 'A boolean argument');
+    describe('hasArgs()', function() {
+      it('returns true', function() {
+        expect(this.o.hasArgs()).to.be.true;
       });
     });
 
-    context('--dash-dash-dash <dash-dash>, dash! dash! dash!', function() {
-      it('works', function() {
-        var o = option('--dash-dash-dash <dash-dash>', 'dash! dash! dash!');
-        expect(o).to.have.property('_short', null);
-        expect(o).to.have.property('_long', 'dash-dash-dash');
-        expect(o).to.have.deep.property('_args.required', true);
-        expect(o).to.have.property('_description', 'dash! dash! dash!');
+    describe('argsRequired()', function() {
+      it('returns true', function() {
+        expect(this.o.argsRequired()).to.be.true;
       });
     });
 
+    describe('description()', function() {
+      it('returns \'An integer argument\'', function() {
+        expect(this.o.description()).to.equal('An integer argument');
+      });
+    });
+  });
+
+  context('--integer <n>, An integer argument', function() {
+    before(function() {
+      this.o = option('--integer <n>', 'An integer argument');
+    });
+
+    describe('short()', function() {
+      it('returns null', function() {
+        expect(this.o.short()).to.be.null;
+      });
+    });
+
+    describe('long()', function() {
+      it('returns \'integer\'', function() {
+        expect(this.o.long()).to.equal('integer');
+      });
+    });
+
+    describe('key()', function() {
+      it('returns \'integer\'', function() {
+        expect(this.o.key()).to.equal('integer');
+      });
+    });
+
+    describe('hasArgs()', function() {
+      it('returns true', function() {
+        expect(this.o.hasArgs()).to.be.true;
+      });
+    });
+
+    describe('argsRequired()', function() {
+      it('returns true', function() {
+        expect(this.o.argsRequired()).to.be.true;
+      });
+    });
+
+    describe('description()', function() {
+      it('returns \'An integer argument\'', function() {
+        expect(this.o.description()).to.equal('An integer argument');
+      });
+    });
+  });
+
+  context('--integer [n], An integer argument', function() {
+    before(function() {
+      this.o = option('--integer [n]', 'An integer argument');
+    });
+
+    describe('short()', function() {
+      it('returns null', function() {
+        expect(this.o.short()).to.be.null;
+      });
+    });
+
+    describe('long()', function() {
+      it('returns \'integer\'', function() {
+        expect(this.o.long()).to.equal('integer');
+      });
+    });
+
+    describe('key()', function() {
+      it('returns \'integer\'', function() {
+        expect(this.o.key()).to.equal('integer');
+      });
+    });
+
+    describe('hasArgs()', function() {
+      it('returns true', function() {
+        expect(this.o.hasArgs()).to.be.true;
+      });
+    });
+
+    describe('argsRequired()', function() {
+      it('returns false', function() {
+        expect(this.o.argsRequired()).to.be.false;
+      });
+    });
+
+    describe('description()', function() {
+      it('returns \'An integer argument\'', function() {
+        expect(this.o.description()).to.equal('An integer argument');
+      });
+    });
+  });
+
+  context('--boolean, A boolean argument', function() {
+    before(function() {
+      this.o = option('--boolean', 'A boolean argument');
+    });
+
+    describe('short()', function() {
+      it('returns null', function() {
+        expect(this.o.short()).to.be.null;
+      });
+    });
+
+    describe('long()', function() {
+      it('returns \'boolean\'', function() {
+        expect(this.o.long()).to.equal('boolean');
+      });
+    });
+
+    describe('key()', function() {
+      it('returns \'boolean\'', function() {
+        expect(this.o.key()).to.equal('boolean');
+      });
+    });
+
+    describe('hasArgs()', function() {
+      it('returns false', function() {
+        expect(this.o.hasArgs()).to.be.false;
+      });
+    });
+
+    describe('argsRequired()', function() {
+      it('returns false', function() {
+        expect(this.o.argsRequired()).to.be.false;
+      });
+    });
+
+    describe('description()', function() {
+      it('returns \'A boolean argument\'', function() {
+        expect(this.o.description()).to.equal('A boolean argument');
+      });
+    });
+  });
+
+  context('--dash-dash-dash <dash-dash>, dash! dash! dash!', function() {
+    before(function() {
+      this.o = option('--dash-dash-dash <dash-dash>', 'dash! dash! dash!');
+    });
+
+    describe('short()', function() {
+      it('returns null', function() {
+        expect(this.o.short()).to.be.null;
+      });
+    });
+
+    describe('long()', function() {
+      it('returns \'dash-dash-dash\'', function() {
+        expect(this.o.long()).to.equal('dash-dash-dash');
+      });
+    });
+
+    describe('key()', function() {
+      it('returns \'dashDashDash\'', function() {
+        expect(this.o.key()).to.equal('dashDashDash');
+      });
+    });
+
+    describe('hasArgs()', function() {
+      it('returns true', function() {
+        expect(this.o.hasArgs()).to.be.true;
+      });
+    });
+
+    describe('argsRequired()', function() {
+      it('returns true', function() {
+        expect(this.o.argsRequired()).to.be.true;
+      });
+    });
+
+    describe('description()', function() {
+      it('returns \'dash! dash! dash!\'', function() {
+        expect(this.o.description()).to.equal('dash! dash! dash!');
+      });
+    });
   });
 });

@@ -43,5 +43,5 @@ parent.execute();
 //     -h, --help             output usage information
 //
 // $ node examples/subcommand.js child -c hoge
-// { 'child-option': 'hoge }
+// { childOption: 'hoge' }
 //
