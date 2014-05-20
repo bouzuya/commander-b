@@ -74,7 +74,7 @@ describe('Examples', function() {
           'stdout',
           [
             '',
-            '  Usage: options',
+            '  Usage: options <action>',
             '',
             '  Options: ',
             '',

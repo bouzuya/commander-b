@@ -100,7 +100,7 @@ describe('Command', function() {
     });
 
     context('has version', function() {
-      it('output help information', function() {
+      it('output the version number', function() {
         command('mycommand').version('0.1.0').printHelp();
         this.sinon.restore();
         var help = [
@@ -117,9 +117,44 @@ describe('Command', function() {
       });
     });
 
+    context('has option', function() {
+      it('output the option information', function() {
+        command('mycommand').option('-a, --all', 'all').printHelp();
+        this.sinon.restore();
+        var help = [
+          '',
+          '  Usage: mycommand',
+          '',
+          '  Options: ',
+          '',
+          '    -a, --all  all',
+          '    -h, --help output usage information',
+          '',
+        ].join('\n');
+        expect(this.stdout).to.equal(help);
+      });
+    });
+
+    context('has args', function() {
+      it('output arguments', function() {
+        command('mycommand <src> <dst>').printHelp();
+        this.sinon.restore();
+        var help = [
+          '',
+          '  Usage: mycommand <src> <dst>',
+          '',
+          '  Options: ',
+          '',
+          '    -h, --help output usage information',
+          '',
+        ].join('\n');
+        expect(this.stdout).to.equal(help);
+      });
+    });
+
     context('has command', function() {
-      it('output help information', function() {
-        var c = command('mycommand <command>');
+      it('output commands', function() {
+        var c = command('mycommand');
         c.command('subcommand', 'description')
         c.printHelp();
         this.sinon.restore();
