@@ -460,4 +460,30 @@ describe('Examples', function() {
       .catch(done);
     });
   });
+
+  describe('examples/async.js', function() {
+    it('0', function(done) {
+      this.slow(300);
+      this.exec('node examples/async.js 0')
+      .then(function(result) {
+        expect(result).to.have.property('stdout', '');
+        expect(result).to.have.property('stderr', '');
+        expect(result).to.have.property('exitCode', 0);
+        done();
+      })
+      .catch(done);
+    });
+
+    it('2', function(done) {
+      this.slow(300);
+      this.exec('node examples/async.js 2')
+      .then(function(result) {
+        expect(result).to.have.property('stdout', '');
+        expect(result).to.have.property('stderr', '');
+        expect(result).to.have.property('exitCode', 2);
+        done();
+      })
+      .catch(done);
+    });
+  });
 });

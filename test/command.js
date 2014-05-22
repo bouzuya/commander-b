@@ -200,74 +200,6 @@ describe('Command', function() {
     });
   });
 
-  describe('execute()', function() {
-    beforeEach(function() {
-      this.stdout = '';
-      this.exitCode = 0;
-      this.sinon.stub(console, 'log', function(s) {
-        this.stdout += s;
-      }.bind(this));
-      this.sinon.stub(process, 'exit', function(i) {
-        this.exitCode = i;
-      }.bind(this));
-    });
-
-    context('', function() {
-      it('execute action', function() {
-        command()
-        .action(function() { console.log('action'); })
-        .execute(['node', 'index.js']);
-        this.sinon.restore();
-        expect(this.stdout).to.equal('action');
-        expect(this.exitCode).to.equal(0);
-      });
-    });
-
-    context('-h', function() {
-      it('output help information', function() {
-        command()
-        .action(function() { console.log('action'); })
-        .execute(['node', 'index.js', '-h']);
-        this.sinon.restore();
-        var help = [
-          '',
-          '  Usage: index',
-          '',
-          '  Options: ',
-          '',
-          '    -h, --help output usage information',
-          '',
-        ].join('\n');
-        expect(this.stdout).to.equal(help);
-        expect(this.exitCode).to.equal(0);
-      });
-    });
-
-    context('-V', function() {
-      it('output the version number', function() {
-        command()
-        .version('0.1.0')
-        .action(function() { console.log('action'); })
-        .execute(['node', 'index.js', '-V']);
-        this.sinon.restore();
-        expect(this.stdout).to.equal('0.1.0');
-        expect(this.exitCode).to.equal(0);
-      });
-    });
-
-    context('subcommand', function() {
-      it('execute subcommand action', function() {
-        var p = command('command <command>');
-        p.action(function() { console.log('action'); });
-        p.command('subcommand').action(function() { console.log('sub'); });
-        p.execute(['node', 'index.js', 'subcommand']);
-        this.sinon.restore();
-        expect(this.stdout).to.equal('sub');
-        expect(this.exitCode).to.equal(0);
-      });
-    });
-  });
-
   describe('_parseExpectedArgs', function() {
     beforeEach(function() { this.f = command._parseExpectedArgs; });
 
@@ -710,11 +642,10 @@ describe('Command', function() {
             ['abc', '-s', 'hoge', '-o', 'fuga', 'def']
           );
           expect(parsed).to.deep.equal({
-            string: 'hoge', option: 'fuga', _: ['abc', 'def'] 
+            string: 'hoge', option: 'fuga', _: ['abc', 'def']
           });
         });
       });
     });
   });
 });
-
