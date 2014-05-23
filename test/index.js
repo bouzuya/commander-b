@@ -9,8 +9,7 @@ describe('Examples', function() {
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
         done();
-      })
-      .catch(done);
+      }, done);
     });
 
     it('-h', function(done) {
@@ -34,8 +33,7 @@ describe('Examples', function() {
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
         done();
-      })
-      .catch(done);
+      }, done);
     });
 
     it('-V', function(done) {
@@ -46,8 +44,7 @@ describe('Examples', function() {
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
         done();
-      })
-      .catch(done);
+      }, done);
     });
   });
 
@@ -62,8 +59,7 @@ describe('Examples', function() {
         );
         expect(result).to.have.property('exitCode', 1);
         done();
-      })
-      .catch(done);
+      }, done);
     });
 
     it('-h', function(done) {
@@ -88,8 +84,7 @@ describe('Examples', function() {
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
         done();
-      })
-      .catch(done);
+      }, done);
     });
 
     it('-V', function(done) {
@@ -106,8 +101,7 @@ describe('Examples', function() {
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
         done();
-      })
-      .catch(done);
+      }, done);
     });
 
     it('hoge', function(done) {
@@ -124,8 +118,7 @@ describe('Examples', function() {
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
         done();
-      })
-      .catch(done);
+      }, done);
     });
 
     it('hoge -b', function(done) {
@@ -142,8 +135,7 @@ describe('Examples', function() {
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
         done();
-      })
-      .catch(done);
+      }, done);
     });
 
     it('hoge -b -s fuga', function(done) {
@@ -160,8 +152,7 @@ describe('Examples', function() {
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
         done();
-      })
-      .catch(done);
+      }, done);
     });
 
     it('hoge -b -s fuga -XXX', function(done) {
@@ -174,8 +165,7 @@ describe('Examples', function() {
         );
         expect(result).to.have.property('exitCode', 1);
         done();
-      })
-      .catch(done);
+      }, done);
     });
   });
 
@@ -190,8 +180,7 @@ describe('Examples', function() {
         );
         expect(result).to.have.property('exitCode', 1);
         done();
-      })
-      .catch(done);
+      }, done);
     });
 
     it('-h', function(done) {
@@ -218,8 +207,7 @@ describe('Examples', function() {
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
         done();
-      })
-      .catch(done);
+      }, done);
     });
 
     it('abc', function(done) {
@@ -232,8 +220,7 @@ describe('Examples', function() {
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
         done();
-      })
-      .catch(done);
+      }, done);
     });
 
     it('child', function(done) {
@@ -246,8 +233,7 @@ describe('Examples', function() {
         );
         expect(result).to.have.property('exitCode', 1);
         done();
-      })
-      .catch(done);
+      }, done);
     });
 
     it('child -h', function(done) {
@@ -276,8 +262,7 @@ describe('Examples', function() {
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
         done();
-      })
-      .catch(done);
+      }, done);
     });
 
     it('child def', function(done) {
@@ -288,8 +273,7 @@ describe('Examples', function() {
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
         done();
-      })
-      .catch(done);
+      }, done);
     });
 
     it('child grandchild-a', function(done) {
@@ -300,8 +284,7 @@ describe('Examples', function() {
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
         done();
-      })
-      .catch(done);
+      }, done);
     });
 
     it('child grandchild-a -h', function(done) {
@@ -324,8 +307,7 @@ describe('Examples', function() {
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
         done();
-      })
-      .catch(done);
+      }, done);
     });
 
     it('child grandchild-a ghi', function(done) {
@@ -338,8 +320,7 @@ describe('Examples', function() {
         );
         expect(result).to.have.property('exitCode', 1);
         done();
-      })
-      .catch(done);
+      }, done);
     });
 
   });
@@ -355,8 +336,7 @@ describe('Examples', function() {
         );
         expect(result).to.have.property('exitCode', 1);
         done();
-      })
-      .catch(done);
+      }, done);
     });
 
     it('abc', function(done) {
@@ -373,8 +353,7 @@ describe('Examples', function() {
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
         done();
-      })
-      .catch(done);
+      }, done);
     });
 
     it('abc -p', function(done) {
@@ -391,8 +370,7 @@ describe('Examples', function() {
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
         done();
-      })
-      .catch(done);
+      }, done);
     });
 
     it('abc -c', function(done) {
@@ -405,8 +383,7 @@ describe('Examples', function() {
         );
         expect(result).to.have.property('exitCode', 1);
         done();
-      })
-      .catch(done);
+      }, done);
     });
 
 
@@ -424,8 +401,7 @@ describe('Examples', function() {
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
         done();
-      })
-      .catch(done);
+      }, done);
     });
 
     it('child -c', function(done) {
@@ -442,8 +418,7 @@ describe('Examples', function() {
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
         done();
-      })
-      .catch(done);
+      }, done);
     });
 
     it('child -p', function(done) {
@@ -456,8 +431,7 @@ describe('Examples', function() {
         );
         expect(result).to.have.property('exitCode', 1);
         done();
-      })
-      .catch(done);
+      }, done);
     });
   });
 
@@ -470,8 +444,7 @@ describe('Examples', function() {
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
         done();
-      })
-      .catch(done);
+      }, done);
     });
 
     it('2', function(done) {
@@ -482,8 +455,20 @@ describe('Examples', function() {
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 2);
         done();
-      })
-      .catch(done);
+      }, done);
+    });
+  });
+
+  describe('examples/throw-error.js', function() {
+    it('', function(done) {
+      this.slow(300);
+      this.exec('node examples/throw-error.js')
+      .then(function(result) {
+        expect(result).to.have.property('stdout', '');
+        expect(result).to.have.property('stderr', '');
+        expect(result).to.have.property('exitCode', 1);
+        done();
+      }, done);
     });
   });
 });
