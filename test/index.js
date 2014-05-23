@@ -486,4 +486,18 @@ describe('Examples', function() {
       .catch(done);
     });
   });
+
+  describe('examples/throw-error.js', function() {
+    it('', function(done) {
+      this.slow(300);
+      this.exec('node examples/throw-error.js')
+      .then(function(result) {
+        expect(result).to.have.property('stdout', '');
+        expect(result).to.have.property('stderr', '');
+        expect(result).to.have.property('exitCode', 1);
+        done();
+      })
+      .catch(done);
+    });
+  });
 });
