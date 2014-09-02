@@ -19,6 +19,11 @@ var child = parent.command('child <command>', 'child subcommand')
                      inspect(options)));
 });
 
+var childB = parent.command('child-b', 'child b')
+.action(function(options) {
+  console.log('child b');
+});
+
 var grandchildA = child
 .command('grandchild-a', 'grandchild-a subcommand')
 .action(function() {
@@ -41,7 +46,8 @@ parent.execute();
 //
 //   Commands:
 //
-//     child child subcommand
+//     child   child subcommand
+//     child-b child b
 //
 //   Options:
 //
@@ -69,5 +75,3 @@ parent.execute();
 // $ node examples/subcommand.js child grandchild-b
 // grandchild-b action
 //
-
-
