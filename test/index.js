@@ -8,8 +8,8 @@ describe('Examples', function() {
         expect(result).to.have.property('stdout', 'Yukiho is God.\n');
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
 
     it('-h', function(done) {
@@ -32,8 +32,8 @@ describe('Examples', function() {
         );
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
 
     it('-V', function(done) {
@@ -43,8 +43,8 @@ describe('Examples', function() {
         expect(result).to.have.property('stdout', '0.1.0\n');
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
   });
 
@@ -58,8 +58,8 @@ describe('Examples', function() {
           'stderr', 'Error: missing required argument `action\'\n'
         );
         expect(result).to.have.property('exitCode', 1);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
 
     it('-h', function(done) {
@@ -83,8 +83,8 @@ describe('Examples', function() {
         );
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
 
     it('-V', function(done) {
@@ -100,8 +100,8 @@ describe('Examples', function() {
         );
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
 
     it('hoge', function(done) {
@@ -117,8 +117,8 @@ describe('Examples', function() {
         );
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
 
     it('hoge -b', function(done) {
@@ -134,8 +134,8 @@ describe('Examples', function() {
         );
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
 
     it('hoge -b -s fuga', function(done) {
@@ -151,8 +151,8 @@ describe('Examples', function() {
         );
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
 
     it('hoge -b -s fuga -XXX', function(done) {
@@ -164,8 +164,8 @@ describe('Examples', function() {
           'stderr', 'Error: passing unknown argument `-XXX\'\n'
         );
         expect(result).to.have.property('exitCode', 1);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
   });
 
@@ -179,8 +179,8 @@ describe('Examples', function() {
           'stderr', 'Error: missing required argument `command\'\n'
         );
         expect(result).to.have.property('exitCode', 1);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
 
     it('-h', function(done) {
@@ -206,8 +206,8 @@ describe('Examples', function() {
         );
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
 
     it('abc', function(done) {
@@ -219,8 +219,8 @@ describe('Examples', function() {
         );
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
 
     it('child', function(done) {
@@ -232,8 +232,8 @@ describe('Examples', function() {
           'stderr', 'Error: missing required argument `command\'\n'
         );
         expect(result).to.have.property('exitCode', 1);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
 
     it('child -h', function(done) {
@@ -261,8 +261,8 @@ describe('Examples', function() {
         );
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
 
     it('child def', function(done) {
@@ -272,8 +272,8 @@ describe('Examples', function() {
         expect(result).to.have.property('stdout', 'child action : def, {}\n');
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
 
     it('child grandchild-a', function(done) {
@@ -283,8 +283,8 @@ describe('Examples', function() {
         expect(result).to.have.property('stdout', 'grandchild-a action\n');
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
 
     it('child grandchild-a -h', function(done) {
@@ -306,8 +306,8 @@ describe('Examples', function() {
         );
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
 
     it('child grandchild-a ghi', function(done) {
@@ -319,8 +319,8 @@ describe('Examples', function() {
           'stderr', 'Error: passing unknown argument `ghi\'\n'
         );
         expect(result).to.have.property('exitCode', 1);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
 
   });
@@ -335,8 +335,8 @@ describe('Examples', function() {
           'stderr', 'Error: missing required argument `command\'\n'
         );
         expect(result).to.have.property('exitCode', 1);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
 
     it('abc', function(done) {
@@ -352,8 +352,8 @@ describe('Examples', function() {
         );
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
 
     it('abc -p', function(done) {
@@ -369,8 +369,8 @@ describe('Examples', function() {
         );
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
 
     it('abc -c', function(done) {
@@ -382,8 +382,8 @@ describe('Examples', function() {
           'stderr', 'Error: passing unknown argument `-c\'\n'
         );
         expect(result).to.have.property('exitCode', 1);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
 
 
@@ -400,8 +400,8 @@ describe('Examples', function() {
         );
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
 
     it('child -c', function(done) {
@@ -417,8 +417,8 @@ describe('Examples', function() {
         );
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
 
     it('child -p', function(done) {
@@ -430,8 +430,8 @@ describe('Examples', function() {
           'stderr', 'Error: passing unknown argument `-p\'\n'
         );
         expect(result).to.have.property('exitCode', 1);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
   });
 
@@ -443,8 +443,8 @@ describe('Examples', function() {
         expect(result).to.have.property('stdout', '');
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 0);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
 
     it('2', function(done) {
@@ -454,8 +454,8 @@ describe('Examples', function() {
         expect(result).to.have.property('stdout', '');
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 2);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
   });
 
@@ -467,8 +467,8 @@ describe('Examples', function() {
         expect(result).to.have.property('stdout', '');
         expect(result).to.have.property('stderr', '');
         expect(result).to.have.property('exitCode', 1);
-        done();
-      }, done);
+      })
+      .then(function() { done(); }, done);
     });
   });
 });
