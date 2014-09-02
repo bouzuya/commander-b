@@ -121,6 +121,23 @@ describe('Examples', function() {
       .then(function() { done(); }, done);
     });
 
+    it('-b hoge', function(done) {
+      this.slow(300);
+      this.exec('node examples/options.js -b hoge')
+      .then(function(result) {
+        expect(result).to.have.property(
+          'stdout',
+          [
+            'Action  : hoge',
+            'Options : { boolean: true }',
+          ].join('\n') + '\n'
+        );
+        expect(result).to.have.property('stderr', '');
+        expect(result).to.have.property('exitCode', 0);
+      })
+      .then(function() { done(); }, done);
+    });
+
     it('hoge -b', function(done) {
       this.slow(300);
       this.exec('node examples/options.js hoge -b')
@@ -387,7 +404,6 @@ describe('Examples', function() {
       .then(function() { done(); }, done);
     });
 
-
     it('child', function(done) {
       this.slow(300);
       this.exec('node examples/subcommand-with-options.js child')
@@ -434,6 +450,40 @@ describe('Examples', function() {
       })
       .then(function() { done(); }, done);
     });
+
+    it('child-with-args -c', function(done) {
+      this.slow(300);
+      this.exec('node examples/subcommand-with-options.js child-with-args -c')
+      .then(function(result) {
+        expect(result).to.have.property('stdout', '');
+        expect(result).to.have.property(
+          'stderr', 'Error: missing required argument `args\'\n'
+        );
+        expect(result).to.have.property('exitCode', 1);
+      })
+      .then(function() { done(); }, done);
+    });
+
+    it('child-with-args -c args', function(done) {
+      this.slow(300);
+      this.exec(
+        'node examples/subcommand-with-options.js child-with-args -c args'
+      )
+      .then(function(result) {
+        expect(result).to.have.property(
+          'stdout',
+          [
+            'child-with-args action',
+            'args',
+            '{ childOption: true }'
+          ].join('\n') + '\n'
+        );
+        expect(result).to.have.property('stderr', '');
+        expect(result).to.have.property('exitCode', 0);
+      })
+      .then(function() { done(); }, done);
+    });
+
   });
 
   describe('examples/async.js', function() {

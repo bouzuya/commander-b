@@ -14,17 +14,26 @@ var child = parent.command('child', 'child subcommand')
   console.log(options);
 });
 
+parent.command('child-with-args <args>', 'child with args')
+.option('-c, --child-option', 'child option')
+.action(function(args, options) {
+  console.log('child-with-args action');
+  console.log(args);
+  console.log(options);
+});
+
 parent.execute();
 
 // $ node examples/subcommand-with-options.js
-// parent action : 
+// parent action :
 //
 // $ node examples/subcommand.js -h
 //   Usage: parent <command>
 //
 //   Commands:
 //
-//     child child subcommand
+//     child           child subcommand
+//     child-with-args child with args
 //
 //   Options:
 //
