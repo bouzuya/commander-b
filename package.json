@@ -1,32 +1,15 @@
 {
   "name": "commander-b",
-  "version": "0.2.2",
   "description": "A helper library for Node.js command-line interfaces, inspired by commander.js.",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha -R spec",
-    "coveralls": "istanbul cover --print none --report lcovonly _mocha && cat ./coverage/lcov.info | coveralls",
-    "coverage": "istanbul cover --print none --report text-summary _mocha"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/bouzuya/commander-b.git"
-  },
-  "keywords": [
-    "cli",
-    "command",
-    "commander"
-  ],
+  "version": "0.2.2",
   "author": {
     "name": "bouzuya",
     "email": "bouzuya@gmail.com",
     "url": "http://bouzuya.net/"
   },
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/bouzuya/commander-b/issues"
   },
-  "homepage": "https://github.com/bouzuya/commander-b",
   "dependencies": {
     "q": "1.0.1"
   },
@@ -37,5 +20,22 @@
     "mocha": "1.18.2",
     "sinon": "1.9.1",
     "sinon-chai": "2.5.0"
+  },
+  "homepage": "https://github.com/bouzuya/commander-b",
+  "keywords": [
+    "cli",
+    "command",
+    "commander"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bouzuya/commander-b.git"
+  },
+  "scripts": {
+    "coverage": "istanbul cover --print none --report text-summary _mocha",
+    "coveralls": "istanbul cover --print none --report lcovonly _mocha && cat ./coverage/lcov.info | coveralls",
+    "test": "mocha -R spec"
   }
 }
