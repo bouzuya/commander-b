@@ -630,19 +630,20 @@ describe('Command', function() {
     context('-s <s>, -o [o]', function() {
       beforeEach(function() {
         this.options = [
+          option('-b, --boolean', ''),
           option('-s, --string <s>', ''),
           option('-o, --option [o]', ''),
         ];
       });
 
-      context('abc -s hoge -o fuga def', function() {
-        it('{ string: "hoge", option: "fuga", _: ["abc", "def"] }', function() {
+      context('abc -s hoge -o fuga -b def', function() {
+        it('{ boolean: true, string: "hoge", option: "fuga", _: ["abc", "def"] }', function() {
           var parsed = this.f(
             this.options,
-            ['abc', '-s', 'hoge', '-o', 'fuga', 'def']
+            ['abc', '-s', 'hoge', '-o', 'fuga', '-b', 'def']
           );
           expect(parsed).to.deep.equal({
-            string: 'hoge', option: 'fuga', _: ['abc', 'def']
+            boolean: true, string: 'hoge', option: 'fuga', _: ['abc', 'def']
           });
         });
       });
