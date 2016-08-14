@@ -1,11 +1,10 @@
-commander-b
-==============================================================================
+![commander-b](https://cloud.githubusercontent.com/assets/1221346/17646328/8d72ba38-61ff-11e6-8e52-5cf10066b7a5.png)
 
 > Fine, we'll go to plan B... You got a plan B?
 >
 > Marcus Fenix
 
-A helper library for Node.js command-line interfaces, inspired by [commander.js][visionmedia/commander.js].
+commander-b is a helper library for Node.js command-line interfaces, inspired by [commander.js][visionmedia/commander.js].
 
 [visionmedia/commander.js]: https://github.com/visionmedia/commander.js
 
